@@ -1,0 +1,36 @@
+"use client";
+
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../../hooks/useAxiosPublic.js";
+import TicketCard from "../../../components/TicketCard.jsx";
+import SectionTitle from "../../../components/SectionTitle.jsx";
+import LoadingSpinner from "../../../components/LoadingSpinner.jsx";
+
+const Advertisement = () => {
+  const axiosPublic = useAxiosPublic();
+
+  const { data: tickets = [], isLoading } = useQuery({
+    queryKey: ["advertised-tickets"],
+    queryFn: async () => (await axiosPublic.get("/tickets/advertised")).data,
+  });
+
+  if (isLoading) return <LoadingSpinner fullScreen={false} />;
+  if (tickets.length === 0) return null;
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-16">
+      <SectionTitle
+        eyebrow="Hand-picked"
+        title="Featured Tickets"
+        subtitle="Curated by our team — strong routes, fair prices, dependable operators."
+      />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {tickets.map((ticket) => (
+          <TicketCard key={ticket._id} ticket={ticket} variant="compact" />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Advertisement;
