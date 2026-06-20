@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+.font-ticket {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+:focus-visible {
+  outline: 2px solid #f2a93b;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Dashed route line used across cards & the hero ("From --- To") */
+.route-line {
+  position: relative;
+  height: 2px;
+  background-image: repeating-linear-gradient(90deg, currentColor 0 6px, transparent 6px 12px);
+  opacity: 0.5;
+}
