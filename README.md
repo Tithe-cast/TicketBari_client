@@ -1,7 +1,7 @@
 # TicketBari — Client
 
 Next.js (App Router) frontend for **TicketBari**. Client Components + React Query for data fetching, Tailwind CSS + DaisyUI for styling, Framer Motion for animation, BetterAuth for session/auth, Stripe Elements for payments.
-
+## Live link:https://ticket-bari-client-green.vercel.app/
 ## Tech Stack
 
 - Next.js 14 (App Router, Client Components)
