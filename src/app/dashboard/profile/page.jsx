@@ -27,17 +27,17 @@ const Profile = () => {
         {roleLabel[role] || "My Profile"}
       </h2>
 
-      <div className="rounded-2xl bg-base-100 p-8 text-center shadow ring-1 ring-base-300">
-        <div className="avatar mx-auto">
-          <div className="relative h-24 w-24 overflow-hidden rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
-            <Image
-              src={user?.image || "https://i.ibb.co/2KTSbtv/default-avatar.png"}
-              alt={dbUser?.name || "User"}
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
+      
+<div className="relative h-24 w-24 overflow-hidden rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
+  <img
+    src={user?.image || `https://ui-avatars.com/api/?name=${user?.name}&background=F2A93B&color=0F1B3D&size=96`}
+    alt={dbUser?.name || "User"}
+    className="h-full w-full object-cover"
+    referrerPolicy="no-referrer"
+  />
+</div>
+      
+        
 
         <h3 className="font-display mt-4 text-xl font-semibold text-base-content">{dbUser?.name}</h3>
         <p className="text-sm text-base-content/60">{dbUser?.email}</p>
