@@ -26,8 +26,9 @@ const Profile = () => {
       <h2 className="font-display mb-6 text-2xl font-bold text-base-content">
         {roleLabel[role] || "My Profile"}
       </h2>
+<div className="rounded-2xl bg-base-100 p-8 text-center shadow ring-1 ring-base-300">
+        <div className="avatar mx-auto">
 
-      
 <div className="relative h-24 w-24 overflow-hidden rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
   <img
     src={user?.image || `https://ui-avatars.com/api/?name=${user?.name}&background=F2A93B&color=0F1B3D&size=96`}
@@ -36,7 +37,7 @@ const Profile = () => {
     referrerPolicy="no-referrer"
   />
 </div>
-      
+   </div>   
         
 
         <h3 className="font-display mt-4 text-xl font-semibold text-base-content">{dbUser?.name}</h3>
