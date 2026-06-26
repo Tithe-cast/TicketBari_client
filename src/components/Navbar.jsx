@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import { usePathname, useRouter } from "next/navigation";
 import { FaTicketAlt } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -82,12 +82,14 @@ const Navbar = () => {
               <div tabIndex={0} role="button" className="btn btn-ghost flex items-center gap-2 px-2">
                 <div className="avatar">
                   <div className="w-8 rounded-full ring ring-primary ring-offset-1">
-                    <Image
-                      src={user.image || "https://i.ibb.co/2KTSbtv/default-avatar.png"}
-                      alt={user.name}
-                      width={32}
-                      height={32}
-                    />
+                    <img
+                        src={user?.image || `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "User")}&background=F2A93B&color=0F1B3D&size=32`}
+  alt={user?.name || "User"}
+                          width={32}
+                          height={32}
+                          className="rounded-full"
+                          referrerPolicy="no-referrer"
+                         />
                   </div>
                 </div>
                 <span className="hidden font-display text-sm md:inline">{user.name}</span>
