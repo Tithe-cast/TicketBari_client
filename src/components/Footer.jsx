@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaTicketAlt, FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { FiMail, FiPhone } from "react-icons/fi";
 import { SiVisa, SiMastercard } from "react-icons/si";
 
@@ -33,6 +34,7 @@ const Footer = () => {
             <li className="flex items-center gap-2"><FiMail /> support@ticketbari.com</li>
             <li className="flex items-center gap-2"><FiPhone /> +880 1234-567890</li>
             <li className="flex items-center gap-2"><FaFacebook /> facebook.com/ticketbari</li>
+            <li className="flex items-center gap-2"><FaXTwitter /> x.com/ticketbari</li>
           </ul>
         </div>
 
